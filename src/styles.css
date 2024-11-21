@@ -1,0 +1,151 @@
+
+
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px solid;
+}
+
+.logo {
+  height: 40px;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.toggle-label {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin-left: 8px;
+}
+
+
+.page {
+  position: fixed;
+  top: 55px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 20px;
+}
+
+
+@media (max-width: 1024px) {
+  .page {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .page {
+    width: 1024px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .page {
+    width: 1440px;
+  }
+}
+
+
+.title-box {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.title-logo {
+  width: 80px;
+  height: 80px;
+}
+
+.title-text {
+  font-size: 64px;
+  font-weight: 700;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+
+.icon-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.icon-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--icon-color);
+}
+
+.icon-container:hover::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-color: var(--hotspot-color);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.icon-container:hover .icon {
+  filter: brightness(0) saturate(100%) invert(1);
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  color: var(--icon-color);
+}
